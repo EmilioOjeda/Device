@@ -1,0 +1,17 @@
+name: Build
+
+on: [pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Delete Package Cache
+        run: swift package reset
+      - name: Build Package
+        run: swift build

@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release - Automatic Versioning
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Create New Version
+        uses: TriPSs/conventional-changelog-action@v3.18.0
+        id: changelog
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          git-message: 'release: {version}'
+          git-user-name: ${{ secrets.USERNAME }}
+          git-user-email: ${{ secrets.EMAIL }}
+          tag-prefix: ''
+          output-file: 'CHANGELOG.md'
+          release-count: 0
+          skip-version-file: 'true'
+          skip-commit: 'false'
+      - name: Create Release
+        uses: ncipollo/release-action@v1.12.0
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        with:
+          tag: ${{ steps.changelog.outputs.tag }}
+          name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+          token: ${{ secrets.ACCESS_TOKEN }}
