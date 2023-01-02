@@ -14,25 +14,25 @@ The [`all-apple-devices`](https://github.com/EmilioOjeda/AllAppleDevices) comman
   - All the devices data.
   - Command:
 
-  		```
-  		all-apple-devices generate -o ./Sources/Device/Generated
-  		```
+    ```
+    all-apple-devices generate -o ./Sources/Device/Generated
+    ```  		
 
 + **iPhoneOSDevice**
   - iPhoneOS-only devices data.
   - Command: 
 
-  		```
-  		all-apple-devices generate -o ./Sources/iPhoneOSDevice/Generated -p iphoneos
-  		```
+    ```
+    all-apple-devices generate -o ./Sources/iPhoneOSDevice/Generated -p iphoneos
+    ```
 
 + **tvOSDevice**
   - tvOS-only devices data.
   - Command:
-  
-  		```
-  		all-apple-devices generate -o ./Sources/tvOSDevice/Generated -p tvos
-  		```
+
+    ```
+    all-apple-devices generate -o ./Sources/tvOSDevice/Generated -p tvos
+    ```
 
 ## Installation
 
