@@ -6,7 +6,7 @@ The [`all-apple-devices`](https://github.com/EmilioOjeda/AllAppleDevices) comman
 
 ## Xcode - Version Used
 
-**14.2 (14C18)**
+**14.3.1 (14E300c)**
 
 ## Targets
 
