@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/EmilioOjeda/Device/compare/0.2.0...0.3.0) (2023-09-19)
+
+
+### Features
+
+* update the list of devices available in Xcode 15 ([8f7b389](https://github.com/EmilioOjeda/Device/commit/8f7b3895a6e289aa60963ff48968473d34e2b5b8))
+
+
+
 # [0.2.0](https://github.com/EmilioOjeda/Device/compare/0.1.0...0.2.0) (2023-06-22)
 
 
